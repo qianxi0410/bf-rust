@@ -1,7 +1,5 @@
 use std::{env, fs::File, io::Read};
 
-mod brainfuck;
-
 fn main() {
     // Determine which file to execute
     let args: Vec<String> = env::args().collect();
@@ -19,5 +17,5 @@ fn main() {
     file.read_to_string(&mut source)
         .expect("failed to read program file");
 
-    brainfuck::fuck(source);
+    bf_rust::fuck(source);
 }
